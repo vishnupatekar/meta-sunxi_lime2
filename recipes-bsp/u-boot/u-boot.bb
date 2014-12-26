@@ -1,0 +1,25 @@
+require u-boot.inc
+
+# DEPEND on dtc-native for mainline u-boot because the mainline u-boot depends
+# on some of the latest syntax constructs for an appended in dtb used for
+# items like secure boot/image signing.
+DEPENDS += "dtc-native"
+
+DESCRIPTION = "Mainline u-boot bootloader"
+
+#make this to 0 to forcefully use u-boot version mentioned here
+#as sunxi uses mainline u-boot
+DEFAULT_PREFERENCE = "0"
+
+LICENSE = "GPLv2"
+LIC_FILES_CHKSUM = "file://Licenses/gpl-2.0.txt;md5=b234ee4d69f5fce4486a80fdaf4a4263"
+
+
+PV = "v2015.01+git${SRCPV}"
+
+
+# Corresponds to tag v2015.01-rc3
+SRCREV = "32fdf0e4d82bdca5d64d86330e461e59685f9959"
+
+SPL_BINARY = "u-boot-sunxi-with-spl.bin"
+
